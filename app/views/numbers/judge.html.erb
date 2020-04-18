@@ -14,12 +14,14 @@
 </html>
 
 
-<div class="form-group col-sm-5 mt-5">
-  <P>素数か調べたい数値を入力して下さい</P>
-  <p><%= @msg %></p>
-  <form method="POST" action="/numbers/index">
-    <input type = "text" class = "form-control" name = "input1" value="<%= @value %>">
-    <input type="submit" class="btn btn-primary", placeholder="判定する">
+<div class="form-group ">
+  <p class="h1 display-3 text-primary">素数判定</p>
+  <P class="h6 display-5 text-primary">~10桁以下の自然数を入力してください~</p>
+  <p class="mt-5 ml-3"><%= @msg %></p>
+  <form method="POST" action="/numbers/judge">
+    <div class="input-group">
+    <input type = "text" pattern= "[0-9]+" title="数値ではありません・半角の自然数を入力して下さい"  class = "form-control col-sm-8 col-xs-2 " name = "input1" placeholder = "自然数を入力してください" maxlength="10" required >
+  <input type="submit" class="btn btn-primary ml-3 mt-3 ", placeholder="判定する">
   </form>
 
 </div>
